@@ -1,11 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PelisPlus</title>
-</head>
-<body>
-    <nav><h1>Esta es una pagina para ver peliculas</h1></nav>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/Captura2.PNG">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>PelisPlus</title>
+    </head>
+    
+    <body>
+        <!--AQUI EMPIEZA EL NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="" alt="" width="100" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-5 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Peliculas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Administrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--AQUI TERMINA EL NAVBAR-->
+    
+        <!-- Foto/video principal -->
+        <header>
+            <div class="card text-bg-dark video-principal">
+                <iframe width="1520" height="546" src="https://www.youtube.com/embed/MVvGSBKV504" title="OPPENHEIMER - Tráiler Oficial - Subtitulado - (Universal Studios) - HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="card-img-overlay mt-5 container-fluid">
+                    <h1 class="card-title h1-principal col-xxl-10 col-xl-10 col-lg-12 col-md-8 col-sm-7">NOMBRE DE PELICULA.</h1>
+                    <p class="card-text texto-video-principal mt-5 col-sm-6 col-xs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit iure laboriosam quam molestiae error natus repellendus, vel nobis labore dolore, ipsum ipsa asperiores numquam quae minima. Ratione quidem repellat numquam!.</p>
+                    <a class="btn btn-dark btn-lg btn-outline-light mt-4 py-3 col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-sm-4 btn-susc-video-principal"
+                        href="#" role="button">Reproducir</a>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Peliculas sugeridas -->
+        <section>
+            <div class="card text-bg-dark" id="peliculas-series-sugeridas">
+                <img src="" class="card-img img-fondo-sugeridas"
+                    alt="imagen de fondo de la seccion de peliculas">
+                <div class="card-img-overlay">
+                    <h2 class="card-title titulo-pelis-sugeridas mt-3">CATEGORIA 1.</h2>
+                    <div id="carouselSugeridas" class="carousel slide mt-5">
+                        <button class="carousel-control-prev " type="button" data-bs-target="#carouselSugeridas"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <div class="carousel-inner carrusel-pelis-sugeridas container">
+                            <div class="carousel-item active container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="/pages/westworld1x1.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/westworld.poster.2 (Copiar).jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster westworld"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/encanto-246546841-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster encanto"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/knock_at_the_cabin-261379789-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster knock at the cabin"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/el gerente.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster el gerente"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="/pages/supermariobros.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster mario bros"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/nirvana.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster nirvana"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/puss_in_boots_the_last_wish-897078202-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster el gato con botas"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="./assets/Chuky.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster chuky"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="./pages/error404.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/shazam_fury_of_the_gods-942384944-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster shazam"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/yellowstone.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster yellowstone"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/ant_man_and_the_wasp_quantumania-332452493-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster ant-man"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/winnie_the_pooh_blood_and_honey-717024128-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster winnie the pooh"></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSugeridas"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card text-bg-dark" id="peliculas-series-sugeridas">
+                <img src="" class="card-img img-fondo-sugeridas"
+                    alt="imagen de fondo de la seccion de peliculas sugeridas">
+                <div class="card-img-overlay">
+                    <h2 class="card-title titulo-pelis-sugeridas mt-3">CATEGORIA 2.</h2>
+                    <div id="carouselSugeridas" class="carousel slide mt-5">
+                        <button class="carousel-control-prev " type="button" data-bs-target="#carouselSugeridas"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <div class="carousel-inner carrusel-pelis-sugeridas container">
+                            <div class="carousel-item active container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="/pages/westworld1x1.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/westworld.poster.2 (Copiar).jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster westworld"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/encanto-246546841-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster encanto"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/knock_at_the_cabin-261379789-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster knock at the cabin"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/el gerente.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster el gerente"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="/pages/supermariobros.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster mario bros"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/nirvana.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster nirvana"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/puss_in_boots_the_last_wish-897078202-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster el gato con botas"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="./assets/Chuky.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster chuky"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="./pages/error404.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/shazam_fury_of_the_gods-942384944-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster shazam"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/yellowstone.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster yellowstone"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/ant_man_and_the_wasp_quantumania-332452493-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster ant-man"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/winnie_the_pooh_blood_and_honey-717024128-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster winnie the pooh"></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSugeridas"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card text-bg-dark" id="peliculas-series-sugeridas">
+                <img src="" class="card-img img-fondo-sugeridas"
+                    alt="imagen de fondo de la seccion de peliculas sugeridas">
+                <div class="card-img-overlay">
+                    <h2 class="card-title titulo-pelis-sugeridas mt-3">CATEGORIA 3.</h2>
+                    <div id="carouselSugeridas" class="carousel slide mt-5">
+                        <button class="carousel-control-prev " type="button" data-bs-target="#carouselSugeridas"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <div class="carousel-inner carrusel-pelis-sugeridas container">
+                            <div class="carousel-item active container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="/pages/westworld1x1.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/westworld.poster.2 (Copiar).jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster westworld"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/encanto-246546841-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster encanto"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/knock_at_the_cabin-261379789-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster knock at the cabin"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/el gerente.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster el gerente"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="/pages/supermariobros.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster mario bros"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/nirvana.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster nirvana"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/puss_in_boots_the_last_wish-897078202-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster el gato con botas"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="./assets/Chuky.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster chuky"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item container carrusel-sugeridas1">
+                                <div class="row d-flex justify-content-center mx-1">
+                                    <a href="./pages/error404.html"
+                                        class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/shazam_fury_of_the_gods-942384944-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster shazam"></a>
+                                    <a href="./pages/error404.html"
+                                        class="segundo-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5 cont-img-carrusel-sugeridas"><img
+                                            src="/assets/yellowstone.jpg" class=" p-3 img-carrusel-sugeridas"
+                                            alt="poster yellowstone"></a>
+                                    <a href="./pages/error404.html"
+                                        class="tercer-cont-img-carrusel col-xxl-3 col-xl-3 col-lg-4 col-md-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/ant_man_and_the_wasp_quantumania-332452493-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster ant-man"></a>
+                                    <a href="./pages/error404.html"
+                                        class="cuarto-cont-img-carrusel col-xxl-3 col-xl-4 col-lg-4 cont-img-carrusel-sugeridas"><img
+                                            src="https://pics.filmaffinity.com/winnie_the_pooh_blood_and_honey-717024128-large.jpg"
+                                            class=" p-3 img-carrusel-sugeridas" alt="poster winnie the pooh"></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSugeridas"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="intermedio"></div>
+    
+    
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row text-light links-footer">
+                    <div class="col-md-4 col-sm-12">
+                        <a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            href="./pages/error404.html">
+                            <p>Terminos y condiciones de uso</p>
+                        </a>
+                        <a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            href="./pages/error404.html">
+                            <p>Aviso de privacidad</p>
+                        </a>
+                        <a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            href="/pages/contacto.html">
+                            <p>¿Consultas? ¡Contactanos!</p>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <h5>SEGUINOS</h5>
+                        <a href="https://www.facebook.com/RollingCodeSchool" target="en_blank"><img
+                                src="/assets/facebook.png" alt="icono facebook" width="50" height="50"></a>
+                        <a href="https://www.instagram.com/rollingcodeschool/" target="en_blank"><img
+                                src="/assets/instagram.png" alt="icono instagram" width="50" height="50"></a>
+                        <a href="https://twitter.com/rollingcodeok" target="en_blank"><img src="/assets/tw.png"
+                                alt="icono twitter" width="60" height="60"></a>
+                        <a href="https://www.linkedin.com/company/rollingcode/" target="en_blank"><img
+                                src="/assets/ICONO-LINKEDIN.png" alt="icono Linkedin" width="60" height="60"></a>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div>
+                            <a href="#"><img class="m-1" src="/assets/Captura3.JPG" alt="logo WatchVerse" width="200"
+                                    height="100"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+            integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+            integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+            crossorigin="anonymous"></script>
+    </body>
