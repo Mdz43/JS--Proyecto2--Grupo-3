@@ -11,10 +11,228 @@
 			integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
 			crossorigin="anonymous"
 		/>
-		<title>PelisPlus</title>
+		<link rel="stylesheet" href="/css/styleAdmin.css" />
+		<title>Administracion de PelisPlus</title>
 	</head>
 	<body>
-		<table class="table" id="tablaPeliculas"></table>
+		<!--AQUI EMPIEZA EL NAVBAR-->
+		<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/index.html">
+					<img src="" alt="" width="100" height="50" />
+				</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-5 mb-lg-0 ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/index.html">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Peliculas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Administrar</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="TableAdmi"></div>
+
+		<table class="table" style="margin-top: 20px" id="tablaPeliculas"></table>
+		<div class="agregarpeliculas d-flex justify-content-end">
+			<button
+				type="button"
+				class="btn btn-secondary boton-agregar-peliculas"
+				data-bs-toggle="modal"
+				data-bs-target="#exampleModal"
+				data-bs-whatever="@mdo"
+			>
+				Nueva Pelicula
+			</button>
+			<div
+				class="modal fade"
+				id="exampleModal"
+				tabindex="-1"
+				aria-labelledby="exampleModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">
+								Agregar nueva pelicula
+							</h1>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="mb-3">
+									<label for="nombrePeli" class="col-form-label m-1"
+										>Nombre:</label
+									>
+									<input type="text" class="form-control" id="nombrePeli" />
+								</div>
+								<div class="mb-3">
+									<label for="descripcionPeli" class="col-form-label"
+										>Descripcion:</label
+									>
+									<textarea
+										class="form-control"
+										id="descripcionPeli"
+									></textarea>
+								</div>
+								<div class="dropdown">
+									<button
+										class="btn btn-secondary dropdown-toggle"
+										type="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false"
+									>
+										Categoria
+									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a
+												class="dropdown-item btn-accion"
+												onclick="elegirCategoria()"
+												href="#"
+												>Accion</a
+											>
+										</li>
+										<li>
+											<a
+												class="dropdown-item"
+												onclick="elegirCategoria()"
+												href="#"
+												>Comedia</a
+											>
+										</li>
+										<li>
+											<a
+												class="dropdown-item"
+												onclick="elegirCategoria()"
+												href="#"
+												>Romance</a
+											>
+										</li>
+									</ul>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button
+								type="button"
+								class="btn btn-secondary"
+								data-bs-dismiss="modal"
+							>
+								Cancelar
+							</button>
+							<button
+								type="button"
+								class="btn btn-primary"
+								onclick="agregarPelicula(pelicula.peliculaId)"
+							>
+								Guardar
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row text-light links-footer">
+					<div class="col-md-4 col-sm-12">
+						<a
+							class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+							href="./pages/error404.html"
+						>
+							<p>Terminos y condiciones de uso</p>
+						</a>
+						<a
+							class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+							href="./pages/error404.html"
+						>
+							<p>Aviso de privacidad</p>
+						</a>
+						<a
+							class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+							href="/pages/contacto.html"
+						>
+							<p>¿Consultas? ¡Contactanos!</p>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-12">
+						<h5>SEGUINOS</h5>
+						<a
+							href="https://www.facebook.com/RollingCodeSchool"
+							target="en_blank"
+							><img
+								src="/assets/facebook.png"
+								alt="icono facebook"
+								width="50"
+								height="50"
+						/></a>
+						<a
+							href="https://www.instagram.com/rollingcodeschool/"
+							target="en_blank"
+							><img
+								src="/assets/instagram.png"
+								alt="icono instagram"
+								width="50"
+								height="50"
+						/></a>
+						<a href="https://twitter.com/rollingcodeok" target="en_blank"
+							><img
+								src="/assets/tw.png"
+								alt="icono twitter"
+								width="60"
+								height="60"
+						/></a>
+						<a
+							href="https://www.linkedin.com/company/rollingcode/"
+							target="en_blank"
+							><img
+								src="/assets/ICONO-LINKEDIN.png"
+								alt="icono Linkedin"
+								width="60"
+								height="60"
+						/></a>
+					</div>
+					<div class="col-md-4 col-sm-12">
+						<div>
+							<a href="#"
+								><img
+									class="m-1"
+									src="/assets/Captura3.JPG"
+									alt="logo WatchVerse"
+									width="200"
+									height="100"
+							/></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
 		<script src="./js/administradorWeb.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

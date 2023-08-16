@@ -1,33 +1,62 @@
-// Constructor para crear objetos de película
-function Pelicula(pelicula, categoria, peliculaId, descripcion, publicado) {
-    this.pelicula = pelicula;
+class Pelicula {
+    constructor(nombrePelicula, categoria, peliculaId, descripcion, publicado) {
+        this.nombrePelicula = nombrePelicula;
         this.categoria = categoria;
         this.peliculaId = peliculaId;
         this.descripcion = descripcion;
         this.publicado = publicado;
+    }
 }
 
-// Crear algunas películas
-const AdminPelis1 = new Pelicula ('Oppenheimer','Biografia','fwef32f23','película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...')
-const AdminPelis2 = new Pelicula ('The Batman', ' Action, Crimen, Drama', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...')
-const AdminPelis3 = new Pelicula ('Titanic','Romance, Drama', 'dcsjd23jf','Una joven aristócrata se enamora de un artista pobre a bordo del Titanic...')
-const AdminPelis4 = new Pelicula ('SpiderMan No way home', 'Fantástico. Acción. Ciencia ficción', 'ecow3oj2oj', 'Spider-Man, nuestro héroe, vecino y amigo es desenmascarado...')
+let peliculas = [
+    new Pelicula('Oppenheimer', 'Accion', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', false),
+    new Pelicula ('The Batman', ' Action, Crimen, Drama', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', false)
+    // ... (resto de las películas)
+];
 
+class Tabla {
+    constructor(tablaId) {
+        this.tablaId = tablaId;
+    }
+}
 
-// Array de películas
-const peliculas = [AdminPelis1,AdminPelis2, AdminPelis3, AdminPelis4];
+let nombreTabla = new Tabla('jisah6');
 
-// Obtener el elemento de la tabla en el HTML
-const tabla = document.getElementById("tablaPeliculas");
+const nuevaLista = document.createElement('table');
+nuevaLista.id = nombreTabla.tablaId;
+nuevaLista.classList.add('table');
+nuevaLista.innerHTML = `<tr><th class="textList">Pelicula</th><th class="textList">Categoria</th><th class="textList">Descripcion</th><th>Publicado</th><th class="textList">Acciones</th></tr>`;
+const padreContainer = document.getElementById('TableAdmi');
+padreContainer.appendChild(nuevaLista);
 
-// Generar contenido HTML para la tabla
-let contenidoTabla = "<tr><th>Pelicula</th><th>Categoría</th><th>Descripción</th><th>Publicado</th><th>Acciones</th></tr>";
-
-peliculas.forEach((pelicula) => {
-    contenidoTabla += `<tr><td>${pelicula.pelicula}</td><td>${pelicula.categoria}</td><td>${pelicula.descripcion}</td><td><input type="checkbox" name="Publicado" onclick="publicar" /></td><td>
-    <button onclick='borrar' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px; " alt""></button>
-    <button onclick='editar' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt""></button>
-    <button onclick='favoritos' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt""></button></td>
-			</tr>`;
+peliculas.forEach(listaPelis => {
+    const contenidoTabla = document.createElement('tr');
+    contenidoTabla.id = listaPelis.peliculaId;
+    contenidoTabla.innerHTML = `<td>${listaPelis.nombrePelicula}</td><td>${listaPelis.categoria}</td><td>${listaPelis.descripcion}</td><td><input type="checkbox" name="Publicado" ${listaPelis.publicado ? 'checked' : ''} onclick="publicar()" /></td><td>
+    <button onclick='eliminarPelicula("${listaPelis.peliculaId}")' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
+    <button onclick='editar()' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
+    <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
+    nuevaLista.appendChild(contenidoTabla);
 });
-tabla.innerHTML = contenidoTabla;
+function elegirCategoria(event){
+    event.preventDefault();
+}
+
+
+function agregarPelicula (pelisId){
+    let pelicula = peliculas.find(pelicula => pelicula.peliculaId == pelisId.id);
+    peliculas.push(pelicula);
+    
+    const nuevaPeli = document.createElement("div");
+    nuevaPeli.id = pelicula.peliculaId; //asigno la propiedad u objeto "id"
+    nuevaPeli.innerHTML = `
+    <h2>${pelicula.pelicula}</h2>
+    <p>${pelicula.categoria}</p>
+    `;
+    nuevaPeli.classList.add("text-light", "bg-dark", "p-3", "m-2");
+    const padrePelisTabla = document.querySelector(".tabla-pelis");
+    padrePelisTabla.appendChild(nuevaPeli);
+    document.querySelector("form").reset();
+
+}
+
