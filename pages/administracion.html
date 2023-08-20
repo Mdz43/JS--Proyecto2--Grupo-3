@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/Captura2.PNG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styleAdmin.css">
+    <title>PelisPlus</title>
+</head>
+
+<body>
+    <!--AQUI EMPIEZA EL NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="" alt="" width="100" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-5 mb-lg-0 ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Peliculas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Administrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/SobreNosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--AQUI TERMINA EL NAVBAR-->
+
+    <!-- Foto/video principal -->
+    <header>
+        <!-- <h2>Escribe tu mensaje</h2>
+    <form action="" class="bg bg-dark p-1 m-2">
+        <textarea name="" id="nombrePeli" rows="1" class="form-control mb-2"></textarea>
+        <button class="btn btn-primary d-block ms-auto" onclick="agregarPelicula(event)">Enviar</button>
+    </form>  -->
+        <!-- <div class="tabla-pelis"></div> -->
+
+        <div class="agregarpeliculas">
+            <button type="button" class="btn btn-secondary boton-agregar-peliculas" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo">Nueva Pelicula</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nueva pelicula</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nombrePeli" class="col-form-label m-1">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombrePeli">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descripcionPeli" class="col-form-label">Descripcion:</label>
+                                    <textarea class="form-control" id="descripcionPeli"></textarea>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Categoria
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item btn-accion" onclick="elegirCategoriaAccion()"
+                                                href="#">Accion</a></li>
+                                        <li><a class="dropdown-item" onclick="" href="#">Comedia</a></li>
+                                        <li><a class="dropdown-item" onclick="" href="#">Romance</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary"
+                                onclick="agregarPelicula(event)">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Lista de peliculas</h2>
+        <div class="tabla-peliculas">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div class="tabla-pelis"></div>
+
+
+    <div class="intermedio"></div>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row text-light links-footer">
+                <div class="col-md-4 col-sm-12">
+                    <a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                        href="./pages/error404.html">
+                        <p>Terminos y condiciones de uso</p>
+                    </a>
+                    <a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                        href="./pages/error404.html">
+                        <p>Aviso de privacidad</p>
+                    </a>
+                    <a class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                        href="/pages/contacto.html">
+                        <p>¿Consultas? ¡Contactanos!</p>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h5>SEGUINOS</h5>
+                    <a href="https://www.facebook.com/RollingCodeSchool" target="en_blank"><img
+                            src="/assets/facebook.png" alt="icono facebook" width="50" height="50"></a>
+                    <a href="https://www.instagram.com/rollingcodeschool/" target="en_blank"><img
+                            src="/assets/instagram.png" alt="icono instagram" width="50" height="50"></a>
+                    <a href="https://twitter.com/rollingcodeok" target="en_blank"><img src="/assets/tw.png"
+                            alt="icono twitter" width="60" height="60"></a>
+                    <a href="https://www.linkedin.com/company/rollingcode/" target="en_blank"><img
+                            src="/assets/ICONO-LINKEDIN.png" alt="icono Linkedin" width="60" height="60"></a>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div>
+                        <a href="#"><img class="m-1" src="/assets/Captura3.JPG" alt="logo WatchVerse" width="200"
+                                height="100"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+
+    <script src="/js/app.js"></script>
+</body>

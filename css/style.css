@@ -1,0 +1,233 @@
+body{
+    background-color: #040814;
+}
+
+/*inicio css del header */
+
+.navbar{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0px 3px 3px 0px #36b2f07d;
+}
+
+.h1-principal{
+    margin-top: 45px;
+    font-weight: 800;
+    font-size: 55px;
+}
+
+.texto-video-principal{
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 1199.98px) {
+    .h1-principal{
+        font-size: 45px;
+    }
+    .texto-video-principal{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .h1-principal{
+        font-size: 37px;
+    }
+    .texto-video-principal{
+        font-size: 18px;
+    }
+    .video-principal2{
+        height: 76vh;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .h1-principal{
+        font-size: 28px;
+    }
+    .texto-video-principal{
+        font-size: 15px;
+    }
+    .video-principal2{
+        height: 76vh;
+        width: 100%;
+    }
+    .btn-susc-video-principal{
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .h1-principal{
+        font-size: 21px;
+    }
+    .texto-video-principal{
+        font-size: 13px;
+        letter-spacing: 0.3px;
+    }
+    .video-principal2{
+        height: 60vh;
+        width: 100%;
+    }
+    .btn-susc-video-principal{
+        font-size: 12px;
+        font-weight: 700;
+        padding: 0 20px 0 20px;
+    }
+}
+
+@media (max-width: 412px) {
+    .h1-principal{
+        font-size: 16px;
+    }
+    .texto-video-principal{
+        font-size: 10px;
+        position: relative;
+        bottom: 20px;
+    }
+    .video-principal2{
+        height: 45vh;
+        width: 100%;
+    }
+    .btn-susc-video-principal{
+        font-size: 10px;
+        font-weight: 900;
+        padding: 13px 12px 13px 12px !important;
+        position: relative;
+        bottom: 33px;
+    }
+
+}
+
+/* fin css del header */
+
+/*inicio css de peliculas sugeridas */
+.carousel-control-prev, .carousel-control-next{
+    width: 130px;
+    z-index: 1;
+}
+
+.img-fondo-sugeridas{
+    height: 100vh ;
+    object-fit: cover;
+}
+
+.titulo-pelis-sugeridas{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    position: relative;
+    top: 20px;
+}
+
+.cont-img-carrusel-sugeridas{
+    width: 300px;
+    height: 380px;
+}
+
+.carrusel-pelis-sugeridas{
+    margin-top: 90px;
+}
+
+.img-carrusel-sugeridas{
+    width: 100%;
+}
+
+@media (max-width: 1399.98px) {
+    .cont-img-carrusel-sugeridas{
+        width: 290px;
+        height: 370px;
+    }
+    .cuarto-cont-img-carrusel{
+        display: none;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .cont-img-carrusel-sugeridas{
+        width: 260px;
+        height: 340px; 
+    }
+}
+
+@media (max-width: 991.98px) {
+    .cont-img-carrusel-sugeridas{
+        width: 210px;
+        height: 290px;
+    }
+    .img-fondo-sugeridas{
+        height: 75vh ;
+    }
+    .titulo-pelis-sugeridas{
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .img-fondo-sugeridas{
+        height: 62vh;
+    }
+    .tercer-cont-img-carrusel{
+        display: none;
+    }
+    .titulo-pelis-sugeridas{
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .img-fondo-sugeridas{
+        height: 45vh ;
+    }
+    .titulo-pelis-sugeridas{
+        font-size: 19px;
+    }
+    .segundo-cont-img-carrusel{
+        display: none;
+    }
+    .cont-img-carrusel-sugeridas{
+        width: 180px;
+        height: 260px; 
+    }
+    .carrusel-pelis-sugeridas{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 412px) {
+    .img-fondo-sugeridas{
+        height: 32vh ;
+    }
+    .titulo-pelis-sugeridas{
+        font-size: 15px;
+        top: -10px;
+    }
+    .carrusel-pelis-sugeridas{
+        margin-top: -50px;
+    }
+    .cont-img-carrusel-sugeridas{
+        width: 160px;
+        height: 160px; 
+    }
+}
+
+/*fin css de peliculas sugeridas */
+
+.intermedio{
+    background-color: black;
+    width: 100%;
+    height: 28px;
+}
+
+
+.span-id-agregarpelicula{
+    border: solid 1px black;
+    width: 100%;
+    height: 100%;
+}
