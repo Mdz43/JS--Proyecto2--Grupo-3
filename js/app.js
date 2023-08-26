@@ -1,9 +1,9 @@
 console.log("asdad")
 class Movies{
-    constructor(nameMovie, descriptionMovie){
+    constructor(){
         this.idMovie = [];
-        this.nameMovie = nameMovie;
-        this.descriptionMovie = descriptionMovie;
+        this.nameMovie = [];
+        this.descriptionMovie = [];
         this.categoryMovieAction = [];
         this.categoryMovieComedy = [];
         this.categoryMovieRomance = [];
@@ -42,6 +42,25 @@ function agregarPelicula(event) {
     document.querySelector("form").reset();
 
 }
+
+
+// function agregarPelicula (pelisId){
+//     let pelicula = peliculas.find(pelicula => pelicula.peliculaId == pelisId.id);
+//     peliculas.push(pelicula);
+    
+//     const nuevaPeli = document.createElement("div");
+//     nuevaPeli.id = pelicula.peliculaId; //asigno la propiedad u objeto "id"
+//     nuevaPeli.innerHTML = `
+//     <h2>${pelicula.pelicula}</h2>
+//     <p>${pelicula.categoria}</p>
+//     `;
+//     nuevaPeli.classList.add("text-light", "bg-dark", "p-3", "m-2");
+//     const padrePelisTabla = document.querySelector(".tabla-pelis");
+//     padrePelisTabla.appendChild(nuevaPeli);
+//     document.querySelector("form").reset();
+
+// }
+
 
 
 
