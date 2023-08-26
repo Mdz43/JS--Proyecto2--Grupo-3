@@ -9,8 +9,8 @@ class Pelicula {
 }
 
 let peliculas = [
-    new Pelicula('Oppenheimer', 'Accion', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', false),
-    new Pelicula ('The Batman', ' Action, Crimen, Drama', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', false)
+    new Pelicula('Oppenheimer', 'Accion', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', true),
+    new Pelicula ('The Batman', ' Action, Crimen, Drama', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', true)
     // ... (resto de las películas)
 ];
 
@@ -33,14 +33,11 @@ peliculas.forEach(listaPelis => {
     const contenidoTabla = document.createElement('tr');
     contenidoTabla.id = listaPelis.peliculaId;
     contenidoTabla.innerHTML = `<td>${listaPelis.nombrePelicula}</td><td>${listaPelis.categoria}</td><td>${listaPelis.descripcion}</td><td><input type="checkbox" name="Publicado" ${listaPelis.publicado ? 'checked' : ''} onclick="publicar()" /></td><td>
-    <button onclick='eliminarPelicula("${listaPelis.peliculaId}")' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
+    <button onclick='eliminarPelicula(${listaPelis.peliculaId})' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
     <button onclick='editar()' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
     <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
     nuevaLista.appendChild(contenidoTabla);
 });
-function elegirCategoria(event){
-    event.preventDefault();
-}
 
 
 function agregarPelicula(event) { 
@@ -58,13 +55,23 @@ function agregarPelicula(event) {
     const contenidoTabla = document.createElement('tr');
     contenidoTabla.id = peliculaId;
     contenidoTabla.innerHTML = `<td>${nombrePeliText}</td><td>${categoriaPeliText}</td><td>${descripcionPeliText}</td><td><input type="checkbox" name="Publicado" ${this.publicado ? 'checked' : ''} onclick="publicar()" /></td><td>
-    <button onclick='eliminarPelicula("${peliculaId}")' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
+    <button onclick="eliminarPelicula(${id})" style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
     <button onclick='editar()' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
     <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
     nuevaLista.appendChild(contenidoTabla);
     document.querySelector("form").reset();
-    
-
+    console.log(contenidoTabla.id)
 }
+
+function eliminarPelicula(id) {
+    const peliAEliminar = document.getElementById(id)
+    peliAEliminar.remove()
+}
+
+function publicar(params) {
+    
+}
+
+
 
 
