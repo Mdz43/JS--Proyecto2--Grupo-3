@@ -38,30 +38,36 @@ peliculas.forEach(listaPelis => {
     nuevaLista.appendChild(contenidoTabla);
 });
 
-function elegirCategoria(event) {
-    event.preventDefault();
-}
+// En relación a la función agregarPelicula, creo que hay un error en la línea 49, donde se usa el parámetro pelisId para buscar una película en el array peliculas. Sin embargo, el parámetro pelisId no se corresponde con el id de ninguna película, ya que es un número generado aleatoriamente por la función Date().getTime().
 
-function agregarPelicula(pelisId) {
-    let pelicula = peliculas.find(pelicula => pelicula.peliculaId == pelisId.id);
+// Una posible solución sería pasar el id de la película que se quiere agregar como argumento de la función agregarPelicula, en lugar de generar uno nuevo. Por ejemplo:
+
+// function agregarPelicula(peliculaId) {     let pelicula = peliculas.find(pelicula => pelicula.peliculaId == peliculaId);     // ... (resto del código) }
+
+// function agregarPelicula(pelisId) {
+//     let pelicula = peliculas.find(pelicula => pelicula.peliculaId == pelisId);
+//     peliculas.push(pelicula);
+//     const nuevaPeli = document.createElement("div");
+//     const id = new Date().getTime();//se crea la propiedad ID con un número aleatorio
+//     nuevaPeli.id = id; //asigno la propiedad "id"
+//     nuevaPeli.innerHTML = `
+//     <h2>${pelicula.pelicula}</h2>
+//     <p>${pelicula.categoria}</p>
+//     `;
+//     nuevaPeli.classList.add("text-light", "bg-dark", "p-3", "m-2");
+//     const padrePelisTabla = document.querySelector(".tabla-pelis");
+//     padrePelisTabla.appendChild(nuevaPeli);
+//     document.querySelector("form").reset();
+// }
+function agregarPelicula(peliculaId) {
+    //function login(event) {
+    //event.preventDefault(); //! todos los formularios tienen evento por default que refresca la página
+    let pelicula = peliculas.find(pelicula => pelicula.peliculaId == peliculaId);
     peliculas.push(pelicula);
-    const nuevaPeli = document.createElement("div");
-    const id = new Date().getTime();//se crea la propiedad ID con un número aleatorio
-    nuevaPeli.id = id; //asigno la propiedad "id"
-    nuevaPeli.innerHTML = `
-    <h2>${pelicula.pelicula}</h2>
-    <p>${pelicula.categoria}</p>
-    `;
-    nuevaPeli.classList.add("text-light", "bg-dark", "p-3", "m-2");
-    const padrePelisTabla = document.querySelector(".tabla-pelis");
-    padrePelisTabla.appendChild(nuevaPeli);
-    document.querySelector("form").reset();
 }
-
 function eliminarPelicula(id) {
     const peliculaEliminada = document.getElementById(id); //para que sepa cuál película eliminar, le asigno el id a la funcion
     peliculaEliminada.remove();
     alert("Película eliminada con éxito");
     //Las películas originales del array no se eliminan efectivamente con este método
 }
-

@@ -50,6 +50,7 @@
 			data-bs-target="#exampleModal" data-bs-whatever="@mdo">
 			Nueva Pelicula
 		</button>
+		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -69,37 +70,36 @@
 								<label for="descripcionPeli" class="col-form-label">Descripcion:</label>
 								<textarea class="form-control" id="descripcionPeli"></textarea>
 							</div>
-							<div class="dropdown">
+							<!-- <div class="dropdown">
 								<button class="btn btn-secondary dropdown-toggle" type="button"
 									data-bs-toggle="dropdown" aria-expanded="false">
 									Categoria
 								</button>
 								<ul class="dropdown-menu">
 									<li>
-										<a class="dropdown-item btn-accion" onclick="elegirCategoria()"
-											href="#">Accion</a>
+										<a class="dropdown-item btn-accion" onclick="" href="#">Accion</a>
 									</li>
 									<li>
-										<a class="dropdown-item" onclick="elegirCategoria()" href="#">Comedia</a>
+										<a class="dropdown-item" onclick="" href="#">Comedia</a>
 									</li>
 									<li>
-										<a class="dropdown-item" onclick="elegirCategoria()" href="#">Romance</a>
+										<a class="dropdown-item" onclick="" href="#">Romance</a>
 									</li>
-								</ul>
-							</div>
-						</form>
+								</ul> -->
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-							Cancelar
-						</button>
-						<button type="button" class="btn btn-primary" onclick="agregarPelicula(pelicula.peliculaId)">
-							Guardar
-						</button>
-					</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+					<button type="button" class="btn btn-primary" onclick="">
+						Guardar
+					</button>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<!-- footer -->
