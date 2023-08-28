@@ -48,6 +48,71 @@
 							>
 						</li>
 					</ul>
+					<!-- Button modal login -->
+					<button
+						type="button"
+						class="btn btn-primary"
+						data-bs-toggle="modal"
+						data-bs-target="#staticBackdrop"
+					>
+						Login
+					</button>
+
+					<!-- Modal login -->
+					<div
+						class="modal fade"
+						id="staticBackdrop"
+						data-bs-backdrop="static"
+						data-bs-keyboard="false"
+						tabindex="-1"
+						aria-labelledby="staticBackdropLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog modalLogin">
+							<div class="modal-content">
+								<button
+									type="button"
+									style="margin-left: 17rem; margin-top: 5px"
+									class="btn-close botonXModal"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								></button>
+								<div class="modal-header">
+									<form>
+										<img
+											style="margin-left: 1rem"
+											src="../assets/1486564400-account_81513.png"
+											alt="user-img"
+										/>
+										<label class="Username" for="Username">Usuario</label>
+										<input
+											style="margin: 3rem 0rem 0rem 1rem"
+											type="text"
+											id="Username"
+											placeholder="Correo Electronico"
+											required
+										/>
+										<label for="Password">Contraseña</label>
+										<input
+											style="margin-left: 1rem"
+											type="Password"
+											id="Password"
+											placeholder="Contraseña"
+											required
+										/>
+
+										<button
+											style="margin-top: 3rem; margin-left: 1rem"
+											type="submit"
+											id="submit"
+										>
+											Iniciar Sesion
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -617,6 +682,7 @@
 			</div>
 		</footer>
 
+		<script src="./js/app.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
 			integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
