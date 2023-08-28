@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 const $submit = document.getElementById("submit"),
     $Password = document.getElementById("Password"),
     $Username = document.getElementById("Username"),
@@ -28,4 +26,3 @@ const $submit = document.getElementById("submit"),
     })
 
 
->>>>>>> Stashed changes
