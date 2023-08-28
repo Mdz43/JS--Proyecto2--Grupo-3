@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link a mi CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link a Icos Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Gato con botas: Último Deseo</title>
+    <link rel="icon" type="image/x-icon" href="img/N.png">
+</head>
+
+<body>
+    <main>
+        <header class="header-container">
+            <a href="" class="logo-netflix"><img src="img/netflix.png" alt="Logo Netflix"></a>
+            <ul class="header-nav">
+                <li><a href="" class="items-nav">Inicio</a></li>
+                <li><a href="" class="items-nav">Series</a></li>
+                <li><a href="" class="items-nav">Movies</a></li>
+                <li><a href="" class="items-nav">Últimos estrenos</a></li>
+                <li><a href="" class="items-nav">Mi Lista</a></li>
+            </ul>
+            <div class="header-profile">
+                <input type="text" placeholder="Buscar..." class="search">
+                <a href="" onclick="alert('Don´t have any notification')"><i class="fa-sharp fa-solid fa-bell"></i></a>
+                <a href="" onclick="alert('It´s your User Profile')"><i
+                        class="fa-sharp fa-solid fa-circle-user"></i></a>
+            </div>
+        </header>
+        <section class="section-container">
+            <img class="banner" src="img/GATOCONBOTAS.jpg" alt="Gato con botas">
+            <span class="sombra-banner"></span>
+            <div class="first-container">
+                <h2>Gato con botas: Último Deseo</h2>
+                <h4 class="recomendacion">97% para ti</h4>
+                <div class="info">
+                    <h4>2023</h4>
+                    <h4><i>7+</i></h4>
+                    <h4>HD</h4>
+                </div>
+                <p>El Gato con Botas descubre que, debido a su pasión por la aventura, ha gastado ya 8 de sus 9 vidas.
+                    Por tanto, emprende un peligroso viaje en busca del legendario Último Deseo para solicitar que le
+                    restauren las vidas que ya perdió.</p>
+                <div class="actions">
+                    <a href="" class="play">Reproducir</a>
+                    <a href="" class="icons" onclick="alert('Added to your list!')"><i
+                            class="fa-sharp fa-solid fa-plus"></i></a>
+                    <a href="" class="icons" onclick="alert('You like this title!')"><i
+                            class="fa-sharp fa-solid fa-thumbs-up"></i></a>
+                </div>
+                <div class="linktrailer">
+                    <a href="" onclick="toggleVideo();"><i class="fa-sharp fa-solid fa-circle-play"></i></a>
+                    <a href="" onclick="toggleVideo();">
+                        <p class="watchtrailer">Ver trailer<p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="trailer">
+            <video src="img/El Gato Con Botas 2_ El Último Deseo _ Tráiler Oficial (Universal Pictures) HD.mp4"
+                controls="true"></video>
+            <img src="img/cruz.png" class="close" onclick="toggleVideo()">
+        </section>
+    </main>
+    <script src="reproductor.js"></script>
+</body>
+
+</html>
