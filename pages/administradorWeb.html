@@ -1,7 +1,5 @@
-<!-- @format -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +13,6 @@
 		<title>Administracion de Movie Studio</title>
 	</head>
 	<body>
-		<!-- comentario -->
 		<!--AQUI EMPIEZA EL NAVBAR-->
 		<header class="header">
 			<!-- Aca empieza el navbar -->
@@ -58,73 +55,13 @@
 								>
 							</li>
 						</ul>
-						<button
-						type="button"
-						class="btn btn-primary"
-						data-bs-toggle="modal"
-						data-bs-target="#staticBackdrop"
-					>
-						Login
-					</button>
-
-					<!-- Modal login -->
-					<div
-						class="modal fade"
-						id="staticBackdrop"
-						data-bs-backdrop="static"
-						data-bs-keyboard="false"
-						tabindex="-1"
-						aria-labelledby="staticBackdropLabel"
-						aria-hidden="true"
-					>
-						<div class="modal-dialog modalLogin">
-							<div class="modal-content">
-								<button
-									type="button"
-									style="margin-left: 17rem; margin-top: 5px"
-									class="btn-close botonXModal"
-									data-bs-dismiss="modal"
-									aria-label="Close"
-								></button>
-								<div class="modal-header">
-									<form>
-										<img
-											style="margin-left: 1rem"
-											src="../assets/1486564400-account_81513.png"
-											alt="user-img"
-										/>
-										<label class="Username" for="Username">Usuario</label>
-										<label class="Username" for="Username">Correo</label>
-										<input
-											style="margin: 0rem 0rem 1rem 1rem"
-											type="text"
-											id="Username"
-											placeholder="Correo Electronico"
-											required
-										/>
-										<label for="Password">Contraseña</label>
-										<input
-											style="margin-left: 1rem"
-											type="Password"
-											id="Password"
-											placeholder="Contraseña"
-											required
-										/>
-
-										<button
-											style="margin-top: 3rem; margin-left: 1rem"
-											type="submit"
-											id="submit"
-										>
-											Iniciar Sesion
-										</button>
-									
-								</div>
+						<div class="card text-bg-primary tarjeta-admin" style="width: 18rem;">
+							<img src="/assets/ASSET-USER-ADMIN.webp"  class="card-img-top img-tarjeta-admin" alt="imagen de administrador">
+							<div class="card-body">
+							  <h5 class="card-title">Bienvenido Admin!</h5>
 							</div>
-						</div>
-					</div>
-						</form>
-					</div>
+						  </div>
+					
 				</div>
 			</nav>
 			<!-- Aca termina el navbar -->

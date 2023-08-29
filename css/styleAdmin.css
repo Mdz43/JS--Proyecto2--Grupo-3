@@ -1,3 +1,7 @@
+body{
+    background-image: url(/assets/background-image-sobreNosotros2.jpg);
+}
+
 .navbar {
     background-color: #152440;
 }
@@ -93,16 +97,22 @@ form button:hover {
     opacity: .75;
 }
 
-.modalLogin{
-width: 300px;
-height: 370px;
+.tarjeta-admin{
+background-color: #1e2f4f !important;
+width: 80px;
+height: 78px;
 display: flex;
+flex-direction: row;
 justify-content: center;
-align-items: center;
-flex-direction: column;
 border-radius: 50px;
 }
-.botonXModal{
-    display: flex;
-    justify-content: end !important;
+
+.img-tarjeta-admin{
+    width: 82px;
+    height: 78px;
+}
+
+.img-pagadministracion{
+    margin-right: 20px !important;
+    width: 50px !important;
 }

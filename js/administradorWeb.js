@@ -1,16 +1,18 @@
 class Pelicula {
-    constructor(nombrePelicula, categoria, peliculaId, descripcion, publicado) {
+    constructor(nombrePelicula, categoria, peliculaId, descripcion,imagenPeli, publicado) {
         this.nombrePelicula = nombrePelicula;
         this.categoria = categoria;
         this.peliculaId = peliculaId;
         this.descripcion = descripcion;
+        this.imagenPeli = imagenPeli;
         this.publicado = publicado;
     }
 }
 
 let peliculas = [
-    new Pelicula('Oppenheimer', 'Accion', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', false),
-    new Pelicula ('The Batman', ' Accion', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', false)
+    new Pelicula('Oppenheimer', 'Drama', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', false),
+    new Pelicula ('The Batman', 'Accion', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', false),
+    new Pelicula ('interestellar', 'Espacial', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...' ,false)
 ];
 
 class Tabla {
@@ -158,9 +160,7 @@ function eliminarPelicula(id) {
     }
 }
 
-function publicar(params) {
-    
-}
+
 
 let peliculaEditandoId = null;
 let modoEdicion = false;
