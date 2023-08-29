@@ -127,7 +127,7 @@ function agregarPelicula(event) {
     <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
     nuevaLista.appendChild(contenidoTabla);
     document.querySelector("form").reset();
-    console.log(contenidoTabla.id)
+
 }
 
 function eliminarPelicula(id) {
@@ -191,16 +191,6 @@ function guardarEdicion(index) {
     const filaAnterior = document.getElementById(peliculas[index].peliculaId);
     filaAnterior.remove();
 
-    // Agregar la nueva fila actualizada a la tabla
-    const nuevaFila = document.createElement('tr');
-    nuevaFila.id = peliculas[index].peliculaId;
-    nuevaFila.innerHTML = `<td>${nombrePeli}</td><td>${categoriaPeli}</td><td>${descripcionPeli}</td><td><input type="checkbox" name="Publicado" ${peliculas[index].publicado ? 'checked' : ''} onclick="publicar()" /></td><td>
-    <button onclick='eliminarPelicula("${peliculas[index].peliculaId}")' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
-    <button onclick='editarPelicula("${peliculas[index].peliculaId}")' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
-    <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
-    
-    nuevaLista.appendChild(nuevaFila);
-
     // Cerrar el modal
     const modal = bootstrap.Modal.getInstance(document.getElementById("exampleModal"));
     modal.hide();
@@ -242,6 +232,7 @@ document.addEventListener("click", (e) => {
         // Verificar las credenciales del administrador
         if (usernameValue === "admin@gmail.com" && passwordValue === "admin123") {
             window.location.href = "administradorWeb.html";
+            document.getElementById("boton-login").remove();
         } else {
             alert("Credenciales incorrectas. Inténtalo de nuevo.");
         }
