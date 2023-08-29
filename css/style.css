@@ -4,103 +4,75 @@ body{
 
 /*inicio css del header */
 
-.navbar{
-    width: 100%;
-    
+.navbar {
+    background-color: #152440;
 }
 
-.h1-principal{
-    margin-top: 45px;
-    font-weight: 800;
-    font-size: 55px;
+.navbar-light,
+.navbar-toggler {
+    background-color: #152440;
+    border-color: rgba(255, 255, 255, 0.85);
 }
 
-.texto-video-principal{
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 1199.98px) {
-    .h1-principal{
-        font-size: 45px;
-    }
-    .texto-video-principal{
-        font-size: 22px;
-    }
+.sn-txt {
+    color: #121f35;
 }
 
-@media (max-width: 991.98px) {
-    .h1-principal{
-        font-size: 37px;
-    }
-    .texto-video-principal{
-        font-size: 18px;
-    }
-    .video-principal2{
-        height: 76vh;
-        width: 100%;
-        object-fit: cover;
-    }
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+    font-size: 16px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../assets/backdrop.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
 }
 
-@media (max-width: 767.98px) {
-    .h1-principal{
-        font-size: 28px;
-    }
-    .texto-video-principal{
-        font-size: 15px;
-    }
-    .video-principal2{
-        height: 76vh;
-        width: 100%;
-    }
-    .btn-susc-video-principal{
-        font-size: 15px;
-        font-weight: 600;
-    }
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
 }
 
-@media (max-width: 575.98px) {
-    .h1-principal{
-        font-size: 21px;
-    }
-    .texto-video-principal{
-        font-size: 13px;
-        letter-spacing: 0.3px;
-    }
-    .video-principal2{
-        height: 60vh;
-        width: 100%;
-    }
-    .btn-susc-video-principal{
-        font-size: 12px;
-        font-weight: 700;
-        padding: 0 20px 0 20px;
-    }
+.pelicula-principal .titulo {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
 }
 
-@media (max-width: 412px) {
-    .h1-principal{
-        font-size: 16px;
-    }
-    .texto-video-principal{
-        font-size: 10px;
-        position: relative;
-        bottom: 20px;
-    }
-    .video-principal2{
-        height: 45vh;
-        width: 100%;
-    }
-    .btn-susc-video-principal{
-        font-size: 10px;
-        font-weight: 900;
-        padding: 13px 12px 13px 12px !important;
-        position: relative;
-        bottom: 33px;
-    }
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
 
+.pelicula-principal .boton {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+    background: #fff;
+    color: #000;
+}
+
+.pelicula-principal .boton i {
+    margin-right: 1.25em;
 }
 
 /* fin css del header */
@@ -269,7 +241,7 @@ form label {
 }
 
 .Username {
-    color: white;
+    color: black;
 }
 
 form button {

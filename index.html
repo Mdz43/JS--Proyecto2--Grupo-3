@@ -14,42 +14,51 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="/css/style.css" />
-		<title>PelisPlus</title>
+		<title>Movie Studio</title>
 	</head>
 	<body>
-		<!--AQUI EMPIEZA EL NAVBAR-->
-		<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="/index.html">
-					<img src="" alt="" width="100" height="50" />
-				</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-5 mb-lg-0 ms-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="/index.html">Inicio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Peliculas</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="./pages/administradorWeb.html"
-								>Administrar</a
-							>
-						</li>
-					</ul>
-					<!-- Button modal login -->
+		<header class="header">
+			<!-- Aca empieza el navbar -->
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#"
+						><img
+							src="../assets/Logo.jpg"
+							alt="Logo"
+							width="100"
+							height="57"
+					/></a>
 					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a
+									class="nav-link active text-light fw-bold"
+									aria-current="page"
+									href="../index.html"
+									>Inicio</a
+								>
+							</li>
+
+							<li class="nav-item">
+								<a
+									class="nav-link text-light"
+									href="../pages/SobreNosotros.html"
+									>Sobre Nosotros</a
+								>
+							</li>
+						</ul>
+						<button
 						type="button"
 						class="btn btn-primary"
 						data-bs-toggle="modal"
@@ -85,8 +94,9 @@
 											alt="user-img"
 										/>
 										<label class="Username" for="Username">Usuario</label>
+										<label class="Username" for="Username">Correo</label>
 										<input
-											style="margin: 3rem 0rem 0rem 1rem"
+											style="margin: 0rem 0rem 1rem 1rem"
 											type="text"
 											id="Username"
 											placeholder="Correo Electronico"
@@ -108,93 +118,117 @@
 										>
 											Iniciar Sesion
 										</button>
-									</form>
+									
 								</div>
 							</div>
 						</div>
 					</div>
+						</form>
+					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>
+			<!-- Aca termina el navbar -->
+		
 		<!--AQUI TERMINA EL NAVBAR-->
 
 		<!-- Foto/video principal -->
-		<header>
-			<div class="card text-bg-dark video-principal">
-				<iframe
-					width="1520"
-					height="546"
-					src="https://www.youtube.com/embed/MVvGSBKV504"
-					title="OPPENHEIMER - Tráiler Oficial - Subtitulado - (Universal Studios) - HD"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen
-				></iframe>
-				<div class="card-img-overlay mt-5 container-fluid">
-					<h1
-						class="card-title h1-principal col-xxl-10 col-xl-10 col-lg-12 col-md-8 col-sm-7"
-					>
-						NOMBRE DE PELICULA.
-					</h1>
-					<p class="card-text texto-video-principal mt-5 col-sm-6 col-xs-6">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit iure
-						laboriosam quam molestiae error natus repellendus, vel nobis labore
-						dolore, ipsum ipsa asperiores numquam quae minima. Ratione quidem
-						repellat numquam!.
-					</p>
-					<a
-						class="btn btn-dark btn-lg btn-outline-light mt-4 py-3 col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-sm-4 btn-susc-video-principal"
-						href="#"
-						role="button"
-						>Reproducir</a
-					>
-				</div>
+		
+			<main>
+		<div class="pelicula-principal">
+			<div class="contenedor">
+				<h3 class="titulo">Interestellar</h3>
+				<p class="descripcion">
+					Narra las aventuras de un grupo de exploradores que hacen uso de un agujero de gusano recientemente descubierto para superar las limitaciones de los viajes espaciales tripulados y vencer las inmensas distancias que tiene un viaje interestelar.
+				</p>
+				<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+				<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
 			</div>
-		</header>
+		</div>
+		
+		<div class="peliculas-recomendadas contenedor">
+			<div class="contenedor-titulo-controles">
+				<h3>Películas Recomendadas</h3>
+				<div class="indicadores"></div>
+			</div>
 
-		<!-- Peliculas sugeridas -->
-		<section>
-			<div class="card text-bg-dark" id="peliculas-series-sugeridas">
-				<img
-					src=""
-					class="card-img img-fondo-sugeridas"
-					alt="imagen de fondo de la seccion de peliculas sugeridas"
-				/>
-				<div class="card-img-overlay">
-					<!-- Este bloque se genera dinámicamente a través de JavaScript -->
-					<h2 class="card-title titulo-pelis-sugeridas mt-3">CATEGORÍA 1.</h2>
-					<div id="carouselSugeridas" class="carousel slide mt-5">
-						<button
-							class="carousel-control-prev"
-							type="button"
-							data-bs-target="#carouselSugeridas"
-							data-bs-slide="prev"
-						>
-							<span
-								class="carousel-control-prev-icon"
-								aria-hidden="true"
-							></span>
-							<span class="visually-hidden">Anterior</span>
-						</button>
-						<div class="carousel-inner carrusel-pelis-sugeridas container">
-							<!-- Los elementos del carrusel se generarán aquí -->
+			<div class="contenedor-principal">
+				<button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+
+				<div class="contenedor-carousel">
+					<div class="carousel">
+						<div class="pelicula">
+							<a href="#"><img src="./assets/1.png" alt=""></a>
 						</div>
-						<button
-							class="carousel-control-next"
-							type="button"
-							data-bs-target="#carouselSugeridas"
-							data-bs-slide="next"
-						>
-							<span
-								class="carousel-control-next-icon"
-								aria-hidden="true"
-							></span>
-							<span class="visually-hidden">Siguiente</span>
-						</button>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/2.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/3.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/4.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/5.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/6.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/7.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/1.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/2.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/3.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/1.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/2.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/3.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/4.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/5.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/6.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/7.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="/assets/1.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/2.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/3.png" alt=""></a>
+						</div>
+						<div class="pelicula">
+							<a href="#"><img src="./assets/4.png" alt=""></a>
+						</div>
 					</div>
 				</div>
+
+				<button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
 			</div>
-		</section>
+		</div>
+	</main>
+		</header>
+
+		
 
 		<section>
 			<div class="card text-bg-dark" id="peliculas-series-sugeridas">

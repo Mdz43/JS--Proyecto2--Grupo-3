@@ -12,12 +12,6 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* .cards-container{
-    background-color:#e3e3e3;
-}
-.text-container, .loc-container{
-    background-color: transparent;
-} */
 .sn-txt {
     color: #121f35;
 }
@@ -34,4 +28,79 @@ body {
 .card {
     background-color: #121f35;
     color: white;
+}
+/* Login */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+form img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+form input[type="text"],
+input[type="password"] {
+    outline: 0;
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 10px;
+
+}
+
+form label {
+    font-weight: 500;
+    padding: 10px;
+
+}
+
+.box-visible {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Username {
+    color: black;
+}
+
+form button {
+    outline: 0;
+    border: 0;
+    background-color: royalblue;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 250px;
+    padding: 5px;
+    transition: all, 3s ease-in-out;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+form button:hover {
+    opacity: .75;
+}
+
+.modalLogin {
+    width: 300px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+.botonXModal {
+    display: flex;
+    justify-content: end !important;
 }

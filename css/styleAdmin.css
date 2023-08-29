@@ -1,3 +1,22 @@
+.navbar {
+    background-color: #152440;
+}
+
+.navbar-light,
+.navbar-toggler {
+    background-color: #152440;
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.sn-txt {
+    color: #121f35;
+}
+
+
 .boton-agregar-peliculas{
     margin: 20px;
     padding: 10px 50px 10px 50px;
@@ -52,8 +71,8 @@ form label {
     align-items: center;
 
 }
-.Username{
-    color: white;
+.Username {
+    color: black;
 }
 
 form button {

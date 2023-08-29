@@ -64,7 +64,7 @@ document.addEventListener("click", (e) => {
 
         // Verificar las credenciales del administrador
         if (usernameValue === "admin@gmail.com" && passwordValue === "admin123") {
-            window.location.href = "administradorWeb.html";
+            window.location.href = "http://127.0.0.1:5500/pages/administradorWeb.html";
         } else {
             alert("Credenciales incorrectas. Inténtalo de nuevo.");
         }

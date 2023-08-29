@@ -36,3 +36,36 @@ integrantes.forEach(integrante => {
     padreContainer.appendChild(newMemberCard)
 }
 )
+
+const $submit = document.getElementById("submit"),
+    $Password = document.getElementById("Password"),
+    $Username = document.getElementById("Username"),
+    $Visible = document.getElementById("Visible");
+
+document.addEventListener("change", (e) => {
+    if (e.target === $Visible) {
+        if ($Visible.checked === false) $Password.type = "password";
+        else $Password.type = "text";
+    }
+});
+
+document.addEventListener("click", (e) => {
+    if (e.target === $submit) {
+        e.preventDefault();
+        
+        const usernameValue = $Username.value.trim();
+        const passwordValue = $Password.value;
+
+        if (usernameValue === "" || passwordValue === "") {
+            alert("Por favor, completa ambos campos.");
+            return;
+        }
+
+        // Verificar las credenciales del administrador
+        if (usernameValue === "admin@gmail.com" && passwordValue === "admin123") {
+            window.location.href = "http://127.0.0.1:5500/pages/administradorWeb.html";
+        } else {
+            alert("Credenciales incorrectas. Inténtalo de nuevo.");
+        }
+    }
+});
