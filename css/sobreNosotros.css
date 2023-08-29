@@ -98,3 +98,49 @@ form button:hover {
     display: flex;
     justify-content: end !important;
 }
+
+/* Comienza el Footer */
+.logo1 {
+    width: 180px;
+    height: 70px;
+}
+
+.logo2 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo3 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo4 {
+    width: 30px;
+    height: 30px;
+}
+
+.parrafo1 {
+    font-size: 20px;
+    color: white;
+}
+
+.parrafo2 {
+    font-size: 20px;
+    color: white;
+}
+
+.footer1 {
+    background-color: #152440 !important;
+    padding-top: 1vh;
+    
+}
+
+.footer-logo-centro {
+    justify-content: center !important;
+}
+
+.redes-sociales {
+    margin-bottom: 2vh;
+}
+/* Termina Footer */
