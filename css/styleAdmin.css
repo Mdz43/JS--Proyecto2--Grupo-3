@@ -8,12 +8,9 @@ footer .container-fluid{
     background-color: #212529 !important;
     margin-top: 221px;
 }
-
 .tabla{
     display: inline;
 }
-
-
 /* Login */
 * {
     padding: 0;
@@ -21,29 +18,23 @@ footer .container-fluid{
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
 form img {
     width: 100px;
     height: 100px;
     padding: 10px;
 }
-
 form input[type="text"],
 input[type="password"] {
     outline: 0;
     border: 1px solid #ccc;
     width: 80%;
     padding: 10px;
-
 }
-
 form label {
     font-weight: 500;
     padding: 10px;
 
 }
-
 .box-visible {
     width: 100%;
     height: auto;
@@ -55,7 +46,6 @@ form label {
 .Username{
     color: white;
 }
-
 form button {
     outline: 0;
     border: 0;
@@ -69,11 +59,9 @@ form button {
     color: #fff;
     font-weight: 500;
 }
-
 form button:hover {
     opacity: .75;
 }
-
 .modalLogin{
 width: 300px;
 height: 370px;
