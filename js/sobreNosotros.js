@@ -10,11 +10,10 @@ class Integrante {
     }
 }
 let integrantes = [
-    new Integrante('Mario E. Matías', '30 años', 'Gerente en SEMED SRL - Estudiante Fullstack en RollingCodeSchool', 'https://github.com/marioematias', 'https://www.linkedin.com/in/mario-ezequiel-mat%C3%ADas-gonza-9556a9268/', "../assets/foto-mario-matias.jpeg", 'Foto de perfil del integrante Mario E. Matías'),
-    new Integrante('Matias Vizcarra', '22 años', 'Estudiante FullStack en RollingCodeSchool.', 'https://github.com/MattVizcarra', 'l', "../assets/foto-matias-vizcarra.jpg", "Foto de perfil del integrante Matias Vizcarra"),
-    new Integrante('Mario E. Matías', '30 años', 'Gerente en SEMED SRL - Estudiante en RollingCodeSchool', 'g', 'l',),
-    new Integrante('Mario E. Matías', '30 años', 'Gerente en SEMED SRL - Estudiante en RollingCodeSchool', 'g', 'l',),
-    new Integrante('Mario E. Matías', '30 años', 'Gerente en SEMED SRL - Estudiante en RollingCodeSchool', 'g', 'l',),
+    new Integrante('Mario E. Matías', '30 años', '- Estudiante Fullstack en RollingCodeSchool <br> - Socio-Gerente en SEMED SRL', 'https://github.com/marioematias', 'https://www.linkedin.com/in/mario-ezequiel-mat%C3%ADas-gonza-9556a9268/', "../assets/foto-mario-matias.jpeg", 'Foto de perfil del integrante Mario E. Matías'),
+    new Integrante('Matias Vizcarra', '22 años', '- Estudiante FullStack en RollingCodeSchool', 'https://github.com/MattVizcarra', 'https://www.linkedin.com/in/matias-alexis-vizcarra-galv%C3%A1n-75a1a8232/', "../assets/foto-matias-vizcarra.jpg", "Foto de perfil del integrante Matias Vizcarra"),
+    new Integrante('Franco Maidana', '22 años', '- Estudiante Fullstack en RollingCodeSchool <br> - Encargado de establecimiento comercial familiar', 'https://github.com/Francomaidana12', 'www.linkedin.com/in/franco-esteban-maidana-118658287', "../assets/foto-franco-maidana", "Foto de perfil del integrante Franco Maidana"),
+    new Integrante('Lautaro Miranda', '24 años', 'Estudiante Fullstack en RollingCodeSchool <br> - Gerente en MacDonalds', 'https://github.com/Mdz43', 'www.linkedin.com/in/lautaro-hernan-miranda-3b01ba281', "../assets/foto-lautaro-miranda.jpeg", "Foto de perfil del integrante Lautaro Miranda"),
 ]
 integrantes.forEach(integrante => {
     const newMemberCard = document.createElement('div');
