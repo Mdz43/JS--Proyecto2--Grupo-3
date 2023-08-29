@@ -9,10 +9,11 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
 	<link rel="stylesheet" href="/css/styleAdmin.css" />
-	<title>Administracion de PelisPlus</title>
+	<title>Administracion de PelisPlus 1</title>
 </head>
 
 <body>
+	<!-- comentario -->
 	<!--AQUI EMPIEZA EL NAVBAR-->
 	<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
 		<div class="container-fluid">
@@ -36,72 +37,45 @@
 						<a class="nav-link" href="#">Administrar</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/pages/SobreNosotros.html">Sobre Nosotros</a>
+						<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"></div>
 					</li>
 				</ul>
+				<!-- Button modal login -->
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+					Login
+				</button>
+
+				<!-- Modal login -->
+				<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+					tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog modalLogin">
+						<div class="modal-content">
+							<button type="button" style="margin-left: 17rem; margin-top: 5px;"
+								class="btn-close botonXModal" data-bs-dismiss="modal" aria-label="Close"></button>
+							<div class="modal-header">
+								<form>
+									<img style="margin-left: 1rem;" src="../assets/1486564400-account_81513.png"
+										alt="user-img" />
+									<label class="Username" for="Username">Usuario</label>
+									<input style="margin: 3rem 0rem 0rem 1rem;" type="text" id="Username"
+										placeholder="Correo Electronico" required />
+									<label for="Password">Contraseña</label>
+									<input style="margin-left: 1rem;" type="Password" id="Password"
+										placeholder="Contraseña" required />
+
+									<button style="margin-top: 3rem; margin-left: 1rem;" type="submit"
+										id="submit">Iniciar Sesion</button>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
 	</nav>
 	<div id="TableAdmi"></div>
 
-	<table class="table" style="margin-top: 20px" id="tablaPeliculas"></table>
-	<div class="agregarpeliculas d-flex justify-content-end">
-		<button type="button" class="btn btn-secondary boton-agregar-peliculas" data-bs-toggle="modal"
-			data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-			Nueva Pelicula
-		</button>
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">
-							Agregar nueva pelicula
-						</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<div class="mb-3">
-								<label for="nombrePeli" class="col-form-label m-1">Nombre:</label>
-								<input type="text" class="form-control" id="nombrePeli" />
-							</div>
-							<div class="mb-3">
-								<label for="descripcionPeli" class="col-form-label">Descripcion:</label>
-								<textarea class="form-control" id="descripcionPeli"></textarea>
-							</div>
-							<!-- <div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									Categoria
-								</button>
-								<ul class="dropdown-menu">
-									<li>
-										<a class="dropdown-item btn-accion" onclick="" href="#">Accion</a>
-									</li>
-									<li>
-										<a class="dropdown-item" onclick="" href="#">Comedia</a>
-									</li>
-									<li>
-										<a class="dropdown-item" onclick="" href="#">Romance</a>
-									</li>
-								</ul> -->
-					</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-						Cancelar
-					</button>
-					<button type="button" class="btn btn-primary" onclick="">
-						Guardar
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-
+	<div id="modalAddMovies"></div>
 	<!-- footer -->
 	<footer class="footer">
 		<div class="container-fluid">
@@ -141,7 +115,7 @@
 		</div>
 	</footer>
 
-	<script src="./js/administradorWeb.js"></script>
+	<script src="../js/administradorWeb.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
 		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
 		crossorigin="anonymous"></script>
