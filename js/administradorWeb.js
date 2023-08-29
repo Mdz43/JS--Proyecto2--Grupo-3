@@ -128,7 +128,24 @@ function agregarPelicula(event) {
     nuevaLista.appendChild(contenidoTabla);
     document.querySelector("form").reset();
     console.log(contenidoTabla.id)
+    guardarEnLocalStorage(peliculas);
 }
+function guardarEnLocalStorage(peliculas) {
+    localStorage.setItem('peliculas', JSON.stringify(peliculas));
+}
+function cargarPeliculasDesdeLocalStorage() {
+    const peliculasGuardadas = localStorage.getItem('peliculas');
+    if (peliculasGuardadas) {
+        peliculas = JSON.parse(peliculasGuardadas);
+    }
+}
+
+
+
+
+
+
+
 
 function eliminarPelicula(id) {
     const confirmacion = confirm("¿Estás seguro de que deseas eliminar esta película?");
@@ -136,6 +153,8 @@ function eliminarPelicula(id) {
     if (confirmacion) {
         const peliAEliminar = document.getElementById(id);
         peliAEliminar.remove();
+        peliculas = peliculas.filter(pelicula => pelicula.peliculaId !== id);
+        guardarEnLocalStorage(peliculas);
     }
 }
 
@@ -187,19 +206,12 @@ function guardarEdicion(index) {
     peliculas[index].categoria = categoriaPeli;
     peliculas[index].descripcion = descripcionPeli;
 
+    // Actualizar la película en el almacenamiento local
+    guardarEnLocalStorage(peliculas);
+
     // Eliminar la fila anterior de la tabla
     const filaAnterior = document.getElementById(peliculas[index].peliculaId);
     filaAnterior.remove();
-
-    // Agregar la nueva fila actualizada a la tabla
-    const nuevaFila = document.createElement('tr');
-    nuevaFila.id = peliculas[index].peliculaId;
-    nuevaFila.innerHTML = `<td>${nombrePeli}</td><td>${categoriaPeli}</td><td>${descripcionPeli}</td><td><input type="checkbox" name="Publicado" ${peliculas[index].publicado ? 'checked' : ''} onclick="publicar()" /></td><td>
-    <button onclick='eliminarPelicula("${peliculas[index].peliculaId}")' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
-    <button onclick='editarPelicula("${peliculas[index].peliculaId}")' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
-    <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
-    
-    nuevaLista.appendChild(nuevaFila);
 
     // Cerrar el modal
     const modal = bootstrap.Modal.getInstance(document.getElementById("exampleModal"));
@@ -207,6 +219,42 @@ function guardarEdicion(index) {
 
     // Limpiar el formulario
     document.querySelector("form").reset();
+}
+
+function agregarAlCarrusel(pelicula) {
+    const carrusel = document.querySelector("#carouselSugeridas .carousel-inner");
+
+    const nuevaPeliculaCarrusel = document.createElement("div");
+    nuevaPeliculaCarrusel.className = "carousel-item"; // Ajusta las clases según tu diseño
+    nuevaPeliculaCarrusel.innerHTML = `
+        <div class="pelicula-info">
+            <h2>${pelicula.nombrePelicula}</h2>
+            <p>${pelicula.descripcion}</p>
+        </div>
+    `;
+
+    carrusel.appendChild(nuevaPeliculaCarrusel);
+
+    // Asegurarse de que la nueva película esté visible si es la única
+    const items = document.querySelectorAll("#carouselSugeridas .carousel-item");
+    if (items.length === 1) {
+        nuevaPeliculaCarrusel.classList.add("active");
+    }
+}
+
+
+function publicar(peliculaId) {
+    const pelicula = peliculas.find(p => p.peliculaId === peliculaId);
+    if (pelicula) {
+        pelicula.publicado = !pelicula.publicado;
+        
+        // Actualizar la película en el almacenamiento local
+        guardarEnLocalStorage(peliculas);
+
+        if (pelicula.publicado) {
+            agregarAlCarrusel(pelicula);
+        }
+    }
 }
 
 
