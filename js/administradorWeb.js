@@ -1,16 +1,18 @@
 class Pelicula {
-    constructor(nombrePelicula, categoria, peliculaId, descripcion, publicado) {
+    constructor(nombrePelicula, categoria, peliculaId, descripcion,imagenPeli, publicado) {
         this.nombrePelicula = nombrePelicula;
         this.categoria = categoria;
         this.peliculaId = peliculaId;
         this.descripcion = descripcion;
+        this.imagenPeli = imagenPeli;
         this.publicado = publicado;
     }
 }
 
 let peliculas = [
-    new Pelicula('Oppenheimer', 'Accion', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', false),
-    new Pelicula ('The Batman', ' Accion', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', false)
+    new Pelicula('Oppenheimer', 'Drama', 'fwef32f23', 'película biográfica que se centra en la vida del físico teórico Robert Oppenheimer...', false),
+    new Pelicula ('The Batman', 'Accion', 'j3idofdv', 'Bruce Wayne lleva años acechando las calles de la ciudad como Batman...', false),
+    new Pelicula ('interestellar', 'Espacial', '3ddqdofdvdce', 'Narra las aventuras de un grupo de exploradores que hacen uso de un agujero de gusano recientemente descubierto...' ,false)
 ];
 
 class Tabla {
@@ -19,7 +21,7 @@ class Tabla {
     }
 }
 
-function submitForm(event){
+function submitForm(event) {
     event.preventDefault()
 }
 
@@ -107,7 +109,7 @@ padreContainerModal.appendChild(modalAdd);
 
 
 
-function agregarPelicula(event) { 
+function agregarPelicula(event) {
     event.preventDefault();
     const nombrePeli = document.getElementById("nombrePeli");
     const nombrePeliText = nombrePeli.value;
@@ -117,7 +119,7 @@ function agregarPelicula(event) {
     const peliculaId = id
     const descripcionPeli = document.getElementById("descripcionPeli");
     const descripcionPeliText = descripcionPeli.value;
-    peliculas.push(new Pelicula(nombrePeliText,categoriaPeliText,peliculaId, descripcionPeliText, false));
+    peliculas.push(new Pelicula(nombrePeliText, categoriaPeliText, peliculaId, descripcionPeliText, false));
     console.log(peliculas)
     const contenidoTabla = document.createElement('tr');
     contenidoTabla.id = peliculaId;
@@ -142,11 +144,6 @@ function cargarPeliculasDesdeLocalStorage() {
 
 
 
-
-
-
-
-
 function eliminarPelicula(id) {
     const confirmacion = confirm("¿Estás seguro de que deseas eliminar esta película?");
     
@@ -158,9 +155,7 @@ function eliminarPelicula(id) {
     }
 }
 
-function publicar(params) {
-    
-}
+
 
 let peliculaEditandoId = null;
 let modoEdicion = false;
@@ -191,11 +186,9 @@ function editarPelicula(id) {
         // Mostrar el modal
         const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
         modal.show();
-        
+
     }
 }
-
-
 function guardarEdicion(index) {
     const nombrePeli = document.getElementById("nombrePeli").value;
     const categoriaPeli = document.getElementById("categoriaPeli").value;
@@ -206,94 +199,168 @@ function guardarEdicion(index) {
     peliculas[index].categoria = categoriaPeli;
     peliculas[index].descripcion = descripcionPeli;
 
-    // Actualizar la película en el almacenamiento local
-    guardarEnLocalStorage(peliculas);
-
     // Eliminar la fila anterior de la tabla
     const filaAnterior = document.getElementById(peliculas[index].peliculaId);
     filaAnterior.remove();
 
-    // Cerrar el modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById("exampleModal"));
-    modal.hide();
+    // Agregar la nueva fila actualizada a la tabla
+    const nuevaFila = document.createElement('tr');
+    nuevaFila.id = peliculas[index].peliculaId;
+    nuevaFila.innerHTML = `<td>${nombrePeli}</td><td>${categoriaPeli}</td><td>${descripcionPeli}</td><td><input type="checkbox" name="Publicado" ${peliculas[index].publicado ? 'checked' : ''} onclick="publicar()" /></td><td>
+    <button onclick='eliminarPelicula("${peliculas[index].peliculaId}")' style="background-color: white; margin: 2px"><img src='https://image.freepik.com/iconos-gratis/basura_318-10194.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
+    <button onclick='editarPelicula("${peliculas[index].peliculaId}")' style="background-color: white; margin: 2px"><img src='https://th.bing.com/th/id/OIP.PLqDNx6b4VoRann2-_z4pwHaHc?pid=ImgDet&rs=1' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button>
+    <button onclick='favoritos()' style="background-color: white; margin: 2px"><img src='https://logodix.com/logo/600060.jpg' style="width: 20px; height: auto;  padding-bottom: 3px;" alt=""></button></td>`;
 
-    // Limpiar el formulario
-    document.querySelector("form").reset();
-}
+    nuevaLista.appendChild(nuevaFila);
 
-function agregarAlCarrusel(pelicula) {
-    const carrusel = document.querySelector("#carouselSugeridas .carousel-inner");
 
-    const nuevaPeliculaCarrusel = document.createElement("div");
-    nuevaPeliculaCarrusel.className = "carousel-item"; // Ajusta las clases según tu diseño
-    nuevaPeliculaCarrusel.innerHTML = `
+
+
+
+
+
+    function eliminarPelicula(id) {
+        const confirmacion = confirm("¿Estás seguro de que deseas eliminar esta película?");
+
+        if (confirmacion) {
+            const peliAEliminar = document.getElementById(id);
+            peliAEliminar.remove();
+            peliculas = peliculas.filter(pelicula => pelicula.peliculaId !== id);
+            guardarEnLocalStorage(peliculas);
+        }
+    }
+
+    function publicar(params) {
+
+    }
+
+    let peliculaEditandoId = null;
+    let modoEdicion = false;
+    function editarPelicula(id) {
+        const peliculaIndex = peliculas.findIndex(pelicula => pelicula.peliculaId === id);
+
+        if (peliculaIndex !== -1) {
+            const pelicula = peliculas[peliculaIndex];
+            const nombrePeli = document.getElementById("nombrePeli");
+            const categoriaPeli = document.getElementById("categoriaPeli");
+            const descripcionPeli = document.getElementById("descripcionPeli");
+
+            // Llenar el formulario con los datos de la película
+            nombrePeli.value = pelicula.nombrePelicula;
+            categoriaPeli.value = pelicula.categoria;
+            descripcionPeli.value = pelicula.descripcion;
+
+            // Actualizar el botón "Guardar" eliminando el listener anterior y agregando uno nuevo
+            const botonGuardar = document.querySelector("#exampleModal .btn-primary");
+            botonGuardar.removeEventListener("click", guardarEdicion);
+            botonGuardar.addEventListener("click", () => guardarEdicion(peliculaIndex));
+
+
+            // Actualizar el título del modal
+            const modalTitulo = document.querySelector("#exampleModal .modal-title");
+            modalTitulo.textContent = "Editar película";
+
+            // Mostrar el modal
+            const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+            modal.show();
+
+        }
+    }
+
+
+    function guardarEdicion(index) {
+        const nombrePeli = document.getElementById("nombrePeli").value;
+        const categoriaPeli = document.getElementById("categoriaPeli").value;
+        const descripcionPeli = document.getElementById("descripcionPeli").value;
+
+        // Actualizar la película en el array
+        peliculas[index].nombrePelicula = nombrePeli;
+        peliculas[index].categoria = categoriaPeli;
+        peliculas[index].descripcion = descripcionPeli;
+
+        // Actualizar la película en el almacenamiento local
+        guardarEnLocalStorage(peliculas);
+
+        // Eliminar la fila anterior de la tabla
+        const filaAnterior = document.getElementById(peliculas[index].peliculaId);
+        filaAnterior.remove();
+
+        // Cerrar el modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById("exampleModal"));
+        modal.hide();
+
+        // Limpiar el formulario
+        document.querySelector("form").reset();
+    }
+    function agregarAlCarrusel(pelicula) {
+        const carrusel = document.querySelector("#carouselSugeridas .carousel-inner");
+        const nuevaPeliculaCarrusel = document.createElement("div");
+        nuevaPeliculaCarrusel.className = "carousel-item"; // Ajusta las clases según tu diseño
+        nuevaPeliculaCarrusel.innerHTML = `
         <div class="pelicula-info">
             <h2>${pelicula.nombrePelicula}</h2>
             <p>${pelicula.descripcion}</p>
         </div>
     `;
-
-    carrusel.appendChild(nuevaPeliculaCarrusel);
-
-    // Asegurarse de que la nueva película esté visible si es la única
-    const items = document.querySelectorAll("#carouselSugeridas .carousel-item");
-    if (items.length === 1) {
-        nuevaPeliculaCarrusel.classList.add("active");
+        carrusel.appendChild(nuevaPeliculaCarrusel);
+        // Asegurarse de que la nueva película esté visible si es la única
+        const items = document.querySelectorAll("#carouselSugeridas .carousel-item");
+        if (items.length === 1) {
+            nuevaPeliculaCarrusel.classList.add("active");
+        }
     }
+
+
+    function publicar(peliculaId) {
+        const pelicula = peliculas.find(p => p.peliculaId === peliculaId);
+        if (pelicula) {
+            pelicula.publicado = !pelicula.publicado;
+
+            // Actualizar la película en el almacenamiento local
+            guardarEnLocalStorage(peliculas);
+
+            if (pelicula.publicado) {
+                agregarAlCarrusel(pelicula);
+            }
+        }
+    }
+
+
+
+
+
+    //! login
+
+    const $submit = document.getElementById("submit"),
+        $Password = document.getElementById("Password"),
+        $Username = document.getElementById("Username"),
+        $Visible = document.getElementById("Visible");
+
+    document.addEventListener("change", (e) => {
+        if (e.target === $Visible) {
+            if ($Visible.checked === false) $Password.type = "password";
+            else $Password.type = "text";
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if (e.target === $submit) {
+            e.preventDefault();
+
+            const usernameValue = $Username.value.trim();
+            const passwordValue = $Password.value;
+
+            if (usernameValue === "" || passwordValue === "") {
+                alert("Por favor, completa ambos campos.");
+                return;
+            }
+
+            // Verificar las credenciales del administrador
+            if (usernameValue === "admin@gmail.com" && passwordValue === "admin123") {
+                window.location.href = "administradorWeb.html";
+            } else {
+                alert("Credenciales incorrectas. Inténtalo de nuevo.");
+            }
+        }
+    });
 }
-
-
-function publicar(peliculaId) {
-    const pelicula = peliculas.find(p => p.peliculaId === peliculaId);
-    if (pelicula) {
-        pelicula.publicado = !pelicula.publicado;
-        
-        // Actualizar la película en el almacenamiento local
-        guardarEnLocalStorage(peliculas);
-
-        if (pelicula.publicado) {
-            agregarAlCarrusel(pelicula);
-        }
-    }
-}
-
-
-
-
-
-//! login
-
-const $submit = document.getElementById("submit"),
-    $Password = document.getElementById("Password"),
-    $Username = document.getElementById("Username"),
-    $Visible = document.getElementById("Visible");
-
-document.addEventListener("change", (e) => {
-    if (e.target === $Visible) {
-        if ($Visible.checked === false) $Password.type = "password";
-        else $Password.type = "text";
-    }
-});
-
-document.addEventListener("click", (e) => {
-    if (e.target === $submit) {
-        e.preventDefault();
-        
-        const usernameValue = $Username.value.trim();
-        const passwordValue = $Password.value;
-
-        if (usernameValue === "" || passwordValue === "") {
-            alert("Por favor, completa ambos campos.");
-            return;
-        }
-
-        // Verificar las credenciales del administrador
-        if (usernameValue === "admin@gmail.com" && passwordValue === "admin123") {
-            window.location.href = "administradorWeb.html";
-        } else {
-            alert("Credenciales incorrectas. Inténtalo de nuevo.");
-        }
-    }
-});
-
-
