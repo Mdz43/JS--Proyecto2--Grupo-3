@@ -22,17 +22,6 @@
     padding: 10px 50px 10px 50px;
     font-size: large;
 }
-
-footer .container-fluid{
-    background-color: #212529 !important;
-    margin-top: 221px;
-}
-
-.tabla{
-    display: inline;
-}
-
-
 /* Login */
 * {
     padding: 0;

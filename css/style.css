@@ -1,5 +1,5 @@
 body{
-    background-color: #040814;
+    background-color: #212529;
 }
 
 /*inicio css del header */
@@ -142,110 +142,111 @@ body{
     right: 0;
 }
 
+
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .peliculas-recomendadas {
-    margin-bottom: 70px;
+	margin-bottom: 70px;
 }
 
 .peliculas-recomendadas .contenedor-principal {
-    display: flex;
-    align-items: center;
-    position: relative;
+	display: flex;
+	align-items: center;
+	position: relative;
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda,
 .peliculas-recomendadas .contenedor-principal .flecha-derecha {
-    position: absolute;
-    border: none;
-    background: rgba(0, 0, 0, 0.3);
-    font-size: 40px;
-    height: 50%;
-    top: calc(50% - 25%);
-    line-height: 40px;
-    width: 50px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 500;
-    transition: .2s ease all;
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
 .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
-    background: rgba(0, 0, 0, .9);
+	background: rgba(0,0,0, .9);
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
-    left: 0;
+	left: 0;
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-derecha {
-    right: 0;
+	right: 0;
 }
 
 /* ---- ----- ----- Carousel ----- ----- ----- */
 .peliculas-recomendadas .contenedor-carousel {
-    width: 100%;
-    padding: 20px 0;
-    overflow: hidden;
-    scroll-behavior: smooth;
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel {
-    display: flex;
-    flex-wrap: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
-    min-width: 20%;
-    transition: .3s ease all;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
-    transform: scale(1.2);
-    transform-origin: center;
+	transform: scale(1.2);
+	transform-origin: center;
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
-    width: 100%;
-    vertical-align: top;
+	width: 100%;
+	vertical-align: top;
 }
 
 /* ---- ----- ----- Media Queries ----- ----- ----- */
 @media screen and (max-width: 800px) {
-    header .logotipo {
-        margin-bottom: 10px;
-        font-size: 30px;
-    }
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
 
-    header .contenedor {
-        flex-direction: column;
-        text-align: center;
-    }
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
 
-    .pelicula-principal {
-        font-size: 14px;
-    }
+	.pelicula-principal {
+		font-size: 14px;
+	}
 
-    .pelicula-principal .descripcion {
-        max-width: 100%;
-    }
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
 
-    .peliculas-recomendadas .contenedor-carousel {
-        overflow: visible;
-    }
+	.peliculas-recomendadas .contenedor-carousel {
+		overflow: visible;
+	}
 
-    .peliculas-recomendadas .contenedor-carousel .carousel {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
+	.peliculas-recomendadas .contenedor-carousel .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
 
-    .peliculas-recomendadas .indicadores,
-    .peliculas-recomendadas .flecha-izquierda,
-    .peliculas-recomendadas .flecha-derecha {
-        display: none;
-    }
+	.peliculas-recomendadas .indicadores,
+	.peliculas-recomendadas .flecha-izquierda,
+	.peliculas-recomendadas .flecha-derecha {
+		display: none;
+	}
 }
 /*inicio css de peliculas sugeridas */
 .carousel-control-prev, .carousel-control-next{
@@ -257,7 +258,10 @@ body{
     height: 100vh ;
     object-fit: cover;
 }
-
+.img-fondo-sugeridas2 {
+    height: 50vh;
+    object-fit: cover;
+}
 .titulo-pelis-sugeridas{
     font-size: 40px;
     font-weight: 800;
@@ -446,3 +450,49 @@ form button:hover {
     display: flex;
     justify-content: end !important;
 }
+/* Comienza el Footer */
+.logo1 {
+    width: 180px;
+    height: 70px;
+}
+
+.logo2 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo3 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo4 {
+    width: 30px;
+    height: 30px;
+}
+
+.parrafo1 {
+    font-size: 20px;
+    color: white;
+}
+
+.parrafo2 {
+    font-size: 20px;
+    color: white;
+}
+
+.footer1 {
+    background-color: #152440 !important;
+    padding-top: 1vh;
+
+}
+
+.footer-logo-centro {
+    justify-content: center !important;
+}
+
+.redes-sociales {
+    margin-bottom: 2vh;
+}
+
+/* Termina Footer */
