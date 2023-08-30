@@ -1,0 +1,192 @@
+.navbar {
+    background-color: #152440;
+}
+.navbar-light,
+.navbar-toggler {
+    background-color: #152440;
+    border-color: rgba(255, 255, 255, 0.85);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.sn-txt {
+    color: #121f35;
+}
+body {
+    background-image: url(../assets/background-image-sobreNosotros2.jpg);
+}
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+.card {
+    background-color: #121f35;
+    color: white;
+}
+/* Login */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+form img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+form input[type="text"],
+input[type="password"] {
+    outline: 0;
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 10px;
+
+}
+
+form label {
+    font-weight: 500;
+    padding: 10px;
+
+}
+
+.box-visible {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Username {
+    color: black;
+}
+
+form button {
+    outline: 0;
+    border: 0;
+    background-color: royalblue;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 250px;
+    padding: 5px;
+    transition: all, 3s ease-in-out;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+form button:hover {
+    opacity: .75;
+}
+
+.modalLogin {
+    width: 300px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+.botonXModal {
+    display: flex;
+    justify-content: end !important;
+}
+/* Comienza el Footer */
+.logo1 {
+    width: 180px;
+    height: 70px;
+}
+
+.logo2 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo3 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo4 {
+    width: 30px;
+    height: 30px;
+}
+
+.parrafo1 {
+    font-size: 20px;
+    color: white;
+}
+
+.parrafo2 {
+    font-size: 20px;
+    color: white;
+}
+
+.footer1 {
+    background-color: #152440 !important;
+    padding-top: 1vh;
+
+}
+
+.footer-logo-centro {
+    justify-content: center !important;
+}
+
+.redes-sociales {
+    margin-bottom: 2vh;
+}
+
+/* Termina Footer */
+
+/* Comienza el Footer */
+.logo1 {
+    width: 180px;
+    height: 70px;
+}
+
+.logo2 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo3 {
+    width: 30px;
+    height: 30px;
+}
+
+.logo4 {
+    width: 30px;
+    height: 30px;
+}
+
+.parrafo1 {
+    font-size: 20px;
+    color: white;
+}
+
+.parrafo2 {
+    font-size: 20px;
+    color: white;
+}
+
+.footer1 {
+    background-color: #152440 !important;
+    padding-top: 1vh;
+    
+}
+
+.footer-logo-centro {
+    justify-content: center !important;
+}
+
+.redes-sociales {
+    margin-bottom: 2vh;
+}
+/* Termina Footer */
