@@ -90,13 +90,6 @@ fila.addEventListener('mouseleave', () => {
 	peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
 });
 
-
-
-
-
-
-
-
 const $submit = document.getElementById("submit"),
     $Password = document.getElementById("Password"),
     $Username = document.getElementById("Username"),
